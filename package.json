@@ -1,19 +1,19 @@
 {
-    "name": "Cheems-Bot-MD",
+    "name": "Jimbru-Bot-MD",
     "version": "11.0.0",
-    "description": "Whatsapp Bot By DGXeon",
+    "description": "Whatsapp Bot By Mikhaiel",
     "main": "index.js",
     "type": "commonjs",
     "directories": {
         "lib": "lib",
         "src": "src",
-        "media": "XeonMedia"
+        "media": "Media"
     },
     "scripts": {
         "code": "node main.js",
         "start": "node index.js"
     },
-    "author": "DGXeon",
+    "author": "Mikhaiel",
     "license": "MIT",
     "dependencies": {
         "@whiskeysockets/baileys": "^6.6.0",
