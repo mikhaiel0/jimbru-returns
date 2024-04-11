@@ -214,6 +214,15 @@ module.exports = JimbruBot = async (JimbruBot, m, chatUpdate, store) => {
         //anti media
         const JimbrooMedia = m.mtype
         //user status
+	// Check if the sender is a verified user
+        const isUser = jimbruverifieduser.includes(sender);
+        // Check if the sender is the bot owner or a premium user
+        const JimbruByMikhaiel = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender);
+        const isPremium = JimbruByMikhaiel || checkPremiumUser(m.sender, premium);
+
+// Check for expired premium status
+expiredPremiumCheck(JimbruBot, m, premium);
+    
         const isUser = jimbruverifieduser.includes(sender)
         const JimbruByMikhaiel = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isPremium= JimbruByMikhaiel || checkPremiumUser(m.sender, premium)
