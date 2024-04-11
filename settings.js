@@ -8,9 +8,9 @@ const chalk = require('chalk')
 global.sessionid ='ur session id'
 
 //owmner v card
-//global.ytname = "UUU" //ur yt chanel name
-//global.socialm = "insta : https://instagram.com/the_real_mikhaiel" //ur github or insta name
-//global.location = "India, Kerala, Pathanamthitta" //ur location
+global.ytname = "mikhaiel_official" //ur yt chanel name
+global.socialm = "insta : https://instagram.com/the_real_mikhaiel" //ur github or insta name
+global.location = "India, Kerala, Pathanamthitta" //ur location
 
 //new
 global.botname = 'Call Me Jimbru' //ur bot name
