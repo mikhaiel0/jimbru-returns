@@ -114,6 +114,23 @@ const JimbruApk = JSON.parse(fs.readFileSync('./Media/database/apk.json'))
 
 //bug database removed
 
+//user roles 
+const jimbruverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
+
+global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
+if (global.db.data) global.db.data = {
+sticker: {},
+database: {}, 
+game: {},
+others: {},
+users: {},
+chats: {},
+settings: {},
+...(global.db.data || {})
+}
+
+let vote = db.data.others.vote = []
+let kuismath = db.data.game.math = []
 
 //time
 const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
@@ -214,15 +231,11 @@ module.exports = JimbruBot = async (JimbruBot, m, chatUpdate, store) => {
         //anti media
         const JimbrooMedia = m.mtype
         //user status
-	// Check if the sender is a verified user
-        const isUser = jimbruverifieduser.includes(sender);
-        // Check if the sender is the bot owner or a premium user
-        const JimbruByMikhaiel = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender);
-        const isPremium = JimbruByMikhaiel || checkPremiumUser(m.sender, premium);
-        // Check for expired premium status
-        expiredPremiumCheck(JimbruBot, m, premium);
+        const isUser = jimbruverifieduser.includes(sender)
+        const JimbruByMikhaiel = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isPremium= JimbruByMikhaiel || checkPremiumUser(m.sender, premium)
+        expiredPremiumCheck(JimbruBot, m, premium)
 
-        
         //theme sticker reply
         const JimbruStickerWait = () => {
         let JimbruStickerReply = fs.readFileSync('./Media/theme/sticker_reply/wait.webp')
