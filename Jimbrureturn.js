@@ -7501,7 +7501,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/Jimbru.jpg',
+      thumbnailUrl: 'https://i.imgur.com/coQdGXr.jpeg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
