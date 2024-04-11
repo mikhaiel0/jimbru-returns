@@ -212,7 +212,7 @@ module.exports = JimbruBot = async (JimbruBot, m, chatUpdate, store) => {
         const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
         const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
         //anti media
-        const isMedia = m.mtype
+        const JimbrooMedia = m.mtype
         //user status
         const isUser = jimbruverifieduser.includes(sender)
         const JimbruByMikhaiel = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
@@ -741,8 +741,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
     return JimbruBot.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
   }
-        if (db.data.chats[m.chat].image && isMedia) {
-    if(isMedia === "imageMessage"){
+        if (db.data.chats[m.chat].image && JimbrooMedia) {
+    if(JimbrooMedia === "imageMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Image Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-image for this group`)
@@ -750,8 +750,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         }
     }
   }
-        if (db.data.chats[m.chat].antivideo && isMedia) {
-    if(isMedia === "videoMessage"){
+        if (db.data.chats[m.chat].antivideo && JimbrooMedia) {
+    if(JimbrooMedia === "videoMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Video Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-video for this group`)
@@ -759,8 +759,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         }
     }
   }
-        if (db.data.chats[m.chat].antisticker && isMedia) {
-    if(isMedia === "stickerMessage"){
+        if (db.data.chats[m.chat].antisticker && JimbrooMedia) {
+    if(JimbrooMedia === "stickerMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Sticker Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-sticker for this group`)
@@ -768,8 +768,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         }
     }
   }
-        if (db.data.chats[m.chat].antiaudio && isMedia) {
-    if(isMedia === "audioMessage"){
+        if (db.data.chats[m.chat].antiaudio && JimbrooMedia) {
+    if(JimbrooMedia === "audioMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Audio Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-audio for this group`)
@@ -777,8 +777,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         }
     }
   }
-       if (db.data.chats[m.chat].antipoll && isMedia) {
-    if(isMedia === "pollCreationMessage"){
+       if (db.data.chats[m.chat].antipoll && JimbrooMedia) {
+    if(JimbrooMedia === "pollCreationMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Poll Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-poll for this group`)
@@ -786,8 +786,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         }
     }
   }
-       if (db.data.chats[m.chat].antilocation && isMedia) {
-    if(isMedia === "locationMessage"){
+       if (db.data.chats[m.chat].antilocation && JimbrooMedia) {
+    if(JimbrooMedia === "locationMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Location Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-location for this group`)
@@ -795,8 +795,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         }
     }
   }
-       if (db.data.chats[m.chat].antidocument && isMedia) {
-    if(isMedia === "documentMessage"){
+       if (db.data.chats[m.chat].antidocument && JimbrooMedia) {
+    if(JimbrooMedia === "documentMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Document Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-document for this group`)
@@ -804,8 +804,8 @@ JimbruBot.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         }
     }
   }
-      if (db.data.chats[m.chat].anticontact && isMedia) {
-    if(isMedia === "contactMessage"){
+      if (db.data.chats[m.chat].anticontact && JimbrooMedia) {
+    if(JimbrooMedia === "contactMessage"){
         if (JimbruByMikhaiel || isAdmins || !isBotAdmins){		  
         } else {
           replygcjimbru(`\`\`\`「 Contact Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-contact for this group`)
