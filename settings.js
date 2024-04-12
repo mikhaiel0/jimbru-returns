@@ -27,7 +27,7 @@ global.creator = "919544846609@s.whatsapp.net"
 global.xprefix = '.'
 global.premium = ["919544846609"] // Premium User
 global.hituet = 0
-
+global.footer = '© JIMBRU OFFICAL'
 //bot sett
 global.typemenu = 'v8' // menu type 'v1' => 'v8'
 global.typereply = 'v2' // reply type 'v1' => 'v3'
